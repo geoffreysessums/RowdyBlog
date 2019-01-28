@@ -1,9 +1,9 @@
 # DjangoProject
 
-Geoffrey Sessums
-CS 4913 Independent Study - Spring 2019
-Language: Python 3.7.1
-Framework: Django 2.1.4
+Geoffrey Sessums  
+CS 4913 Independent Study - Spring 2019  
+Language: Python 3.7.1  
+Framework: Django 2.1.4  
 
 ## Description
 
