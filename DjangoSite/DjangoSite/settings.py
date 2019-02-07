@@ -122,3 +122,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# External SMTP configuration for sending emails with Django 
+EMAIL_HOST = os.getenv('GMAIL_EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('MY_EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD = os.getenv('MY_EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+# For testing purposes, output all emails to the shell 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
