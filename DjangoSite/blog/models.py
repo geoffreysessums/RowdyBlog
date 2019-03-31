@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -39,6 +40,10 @@ class Post(models.Model):
     objects = models.Manager()
     # A custom manager
     published = PublishedManager()
+
+    # A third party tag manager that can add, retrieve, and remove tags from
+    # Post objects 
+    tags = TaggableManager()
 
     # Contains metadata for Post model
     class Meta:
