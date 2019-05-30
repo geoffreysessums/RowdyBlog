@@ -7,15 +7,25 @@ Framework: Django 2.1.4
 
 ## Description
 
-DjangoProject is a website containing a polling and bloggin application.
+DjangoProject is a blogging web application that uses Django's built-in administration site interface for managing users and editing blog posts.
 
 ## What I Learned
 
-(in progress)
-
-## Table of Contents
-
-(coming soon)
+* How to install and create Django projects.
+* How to create models and generate model migrations.
+* How to create an administration site for models.
+* How to use Django's buit-in administration interface for managing users and editing blog post content.
+* How to use QuerySet and managers.
+* How to build views, templates and URLs.
+* How to use Django's class-based views.
+* How to use Django's built-in pagination class to list views for more responsive web pages.
+* How to send emails using a local SMTP server.
+* How to create forms and handle them in views.
+* How to crete forms from models.
+* How to integrate third-part applications (e.g. django-taggit for tagging posts)
+* How to build complex QuerySets.
+* How to create custom template tags and filters.
+* How to create a sitemap using Django's sitemap framework, so that web crawler can index the site's content.
 
 ## Installation
 
