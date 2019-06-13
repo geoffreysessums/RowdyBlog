@@ -1,9 +1,6 @@
 
-# Created by https://www.gitignore.io/api/python,django,pycharm,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=python,django,pycharm,visualstudiocode
-
-### DjangoProject ###
-DjangoSite/polls/*
+# Created by https://www.gitignore.io/api/vim,django,python,pycharm,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=vim,django,python,pycharm,visualstudiocode
 
 ### Django ###
 *.log
@@ -40,6 +37,7 @@ parts/
 sdist/
 var/
 wheels/
+pip-wheel-metadata/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
@@ -96,6 +94,13 @@ ipython_config.py
 
 # pyenv
 .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don’t work, or not
+#   install all needed dependencies.
+#Pipfile.lock
 
 # celery beat schedule file
 celerybeat-schedule
@@ -198,6 +203,9 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
+# JetBrains templates
+**___jb_tmp___
+
 ### PyCharm Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
 
@@ -242,6 +250,12 @@ fabric.properties
 
 # pyenv
 
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don’t work, or not
+#   install all needed dependencies.
+
 # celery beat schedule file
 
 # SageMath parsed files
@@ -258,12 +272,28 @@ fabric.properties
 
 # Pyre type checker
 
-### Python Patch ###
-.venv/
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+*~
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
 
 ### VisualStudioCode ###
 .vscode/*
-#!.vscode/settings.json
+!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
@@ -272,4 +302,4 @@ fabric.properties
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/python,django,pycharm,visualstudiocode
+# End of https://www.gitignore.io/api/vim,django,python,pycharm,visualstudiocode
