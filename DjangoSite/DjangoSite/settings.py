@@ -82,6 +82,12 @@ WSGI_APPLICATION = 'DjangoSite.wsgi.application'
 
 DATABASES = {
     'default': {
+        # Comment postgresql lines to enable/disable production database 
+        #'ENGINE': os.getenv('DB_ENGINE'),
+        #   'NAME': os.getenv('BLOG_DB'),
+        #   'USER': os.getenv('BLOG_DB_USER'),
+        #   'PASSWORD': os.getenv('BLOG_DB_PASSWORD'),
+        # Comment sqlite3 lines to enable/disable development database 
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
