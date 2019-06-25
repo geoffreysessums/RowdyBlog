@@ -50,6 +50,7 @@ class Post(models.Model):
         # Negative prefix sorts results in descending order so that recent posts
         # appear first
         ordering = ('-publish',)
+
     def __str__(self):
         return self.title
 
