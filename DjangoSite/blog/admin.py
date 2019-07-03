@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, Signup
 
 # Register your models here.
 
@@ -21,3 +21,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'post', 'created', 'active')
     list_filter = ('active', 'created', 'updated')
     search_fields = ('name', 'email', 'body')
+
+# Manage sign up (i.e. mailing list)
+#@admin.register(Signup)
+admin.site.register(Signup)

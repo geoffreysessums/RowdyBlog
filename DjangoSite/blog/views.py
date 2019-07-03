@@ -1,17 +1,24 @@
 from django.core.paginator import Paginator, EmptyPage,\
                                      PageNotAnInteger    
 from django.shortcuts import render, get_object_or_404
-from .models import Post, Comment
+from .models import Post, Comment, Signup
 from django.views.generic import ListView
 
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
-from .forms import EmailPostForm, CommentForm, SearchForm
+from .forms import EmailPostForm, CommentForm, SearchForm, EmailSignupForm
 from django.core.mail import send_mail
 
 from taggit.models import Tag
 
 from django.db.models import Count
+
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+import requests
+from django.conf import settings
+
+import json
 
 # Create your views here.
 def post_list(request, tag_slug=None):
@@ -124,3 +131,38 @@ def post_search(request):
                      {'form': form,
                       'query': query,
                       'results': results})
+
+MAILCHIMP_API_KEY = settings.MAILCHIMP_API_KEY 
+MAILCHIMP_DATA_CENTER = settings.MAILCHIMP_DATA_CENTER
+MAILCHIMP_EMAIL_LIST_ID = settings.MAILCHIMP_EMAIL_LIST_ID
+
+api_url = f'https://{MAILCHIMP_DATA_CENTER}.api.mailchimp.com/3.0'
+members_endpoint = f'{api_url}/lists/{MAILCHIMP_EMAIL_LIST_ID}/members'
+
+def subscribe(email):
+   data = {
+      "email_address": email,
+      "status": "subscribed"
+   }
+   r = requests.post(
+      members_endpoint,
+      auth=("", MAILCHIMP_API_KEY),
+      data=json.dumps(data)
+   )
+   return r.status_code, r.json()
+
+def email_list_signup(request):
+   form = EmailSignupForm(request.POST or None)
+   if request.method == "POST":
+      if form.is_valid():
+         email_signup_qs = Signup.objects.filter(email=form.instance.email)
+         if email_signup_qs.exists():
+            messages.info(request, "You are already subscribed")
+         else:
+            messages.success(request, "Thank you for subscribing")
+            subscribe(form.instance.email)
+            form.save()
+   #return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+   return render(request,
+                     'blog/post/subscribe.html',
+                     {'form': form})

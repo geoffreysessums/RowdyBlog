@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comment
+from .models import Comment, Signup
 
 class EmailPostForm(forms.Form):
     name = forms.CharField(max_length=25)
@@ -15,3 +15,16 @@ class CommentForm(forms.ModelForm):
 
 class SearchForm(forms.Form):
        query = forms.CharField(label='Search')
+
+class EmailSignupForm(forms.ModelForm):
+    email = forms.EmailField(widget=forms.TextInput(attrs={
+        "type": "email",
+        "name": "email",
+        "id": "email",
+        "placeholder": "Enter e-mail",
+        "size": "40",
+    }), label="")
+
+    class Meta:
+        model = Signup
+        fields = ('email', )

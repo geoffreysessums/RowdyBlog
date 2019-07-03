@@ -75,3 +75,10 @@ class Comment(models.Model):
         ordering = ('created',)
     def __str__(self):
            return 'Comment by {} on {}'.format(self.name, self.post)
+
+class Signup(models.Model):
+    email = models.EmailField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

@@ -33,6 +33,7 @@ SITE_ID = 1
 
 # Application definition
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +144,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # For testing purposes, output all emails to the shell 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Mailchimp API settings for mailing list sign up
+MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
+MAILCHIMP_DATA_CENTER = os.getenv('MAILCHIMP_DATA_CENTER')
+MAILCHIMP_EMAIL_LIST_ID = os.getenv('MAILCHIMP_EMAIL_LIST_ID')
