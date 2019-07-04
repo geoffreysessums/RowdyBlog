@@ -1,0 +1,8 @@
+{
+    "python.pythonPath": "/Users/gks/.virtualenvs/my_env/bin/python",
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintArgs": ["--load-plugins","pylint_django"],
+    "python.linting.enabled":true,
+    "python.linting.pep8Args": ["--ignore=E501"],
+}
