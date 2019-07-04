@@ -3,6 +3,7 @@ from .models import Post, Comment, Signup
 
 # Register your models here.
 
+
 # Manage posts
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -15,6 +16,7 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
     ordering = ('status', 'publish') 
 
+
 # Manage comments
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
@@ -23,5 +25,5 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'body')
 
 # Manage sign up (i.e. mailing list)
-#@admin.register(Signup)
+# @admin.register(Signup)
 admin.site.register(Signup)
