@@ -136,14 +136,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# External SMTP configuration for sending emails with Django 
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+# External SMTP configuration for sending emails with Django
 EMAIL_HOST = os.getenv('GMAIL_EMAIL_HOST')
 EMAIL_HOST_USER = os.getenv('MY_EMAIL_HOST_USER') 
 EMAIL_HOST_PASSWORD = os.getenv('MY_EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# For testing purposes, output all emails to the shell 
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# For testing purposes, output all emails to the shell
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Mailchimp API settings for mailing list sign up
 MAILCHIMP_API_KEY = os.getenv('MAILCHIMP_API_KEY')
