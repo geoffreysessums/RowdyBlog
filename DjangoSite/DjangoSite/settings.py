@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'django.contrib.postgres',
-#    'polls.apps.PollsConfig',
+    # 'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -84,16 +84,16 @@ WSGI_APPLICATION = 'DjangoSite.wsgi.application'
 
 DATABASES = {
     'default': {
-        # Comment postgresql lines to enable/disable production database 
-        #'ENGINE': os.getenv('ENGINE'),
-        #'NAME': os.getenv('BLOG_DB'),
-        #'USER': os.getenv('BLOG_DB_USER'),
-        #'PASSWORD': os.getenv('BLOG_DB_PASSWORD'),
-        #'HOST':  os.getenv('HOST'),
-        #'PORT': os.getenv('PORT'),
-        # Comment sqlite3 lines to enable/disable development database 
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # Comment postgresql lines to enable/disable production database
+        'ENGINE': os.getenv('ENGINE'),
+        'NAME': os.getenv('BLOG_DB'),
+        'USER': os.getenv('BLOG_DB_USER'),
+        'PASSWORD': os.getenv('BLOG_DB_PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT'),
+        # Comment sqlite3 lines to enable/disable development database
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
