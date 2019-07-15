@@ -18,7 +18,7 @@ class CommentForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label='Search')
+    query = forms.CharField(label='Search by title or keywords')
 
 
 class EmailSignupForm(forms.ModelForm):
