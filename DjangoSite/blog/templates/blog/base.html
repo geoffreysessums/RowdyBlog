@@ -8,7 +8,21 @@
   </head>
   <body>
     <div id="header">
-      <span class="logo">Rowdy Blog</span>
+      <span class="logo">
+        <a style="color:#f15a22;" href="/">Rowdy Blog</a>
+      </span>
+      <ul class="menu">
+        <li>
+          <a href="{% url "blog:post_search" %}">Search</a>
+        </li>
+        <li>
+          <a href="{% url "blog:subscribe" %}">Subscribe</a>
+        </li>
+      </ul>
+
+      <span class="user">
+          <a href="#">Log-in</a>
+      </span>
     </div>
     <div id="content">
       {% block content %}
