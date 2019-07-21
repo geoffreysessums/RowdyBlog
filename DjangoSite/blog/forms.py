@@ -18,7 +18,9 @@ class CommentForm(forms.ModelForm):
 
 
 class SearchForm(forms.Form):
-    query = forms.CharField(label='Search by title or keywords')
+    query = forms.CharField(widget=forms.TextInput(attrs={
+                            "size": "40"}),
+                            label='Search by title or keywords')
 
 
 class EmailSignupForm(forms.ModelForm):
