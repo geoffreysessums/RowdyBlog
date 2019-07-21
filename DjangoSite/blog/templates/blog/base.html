@@ -24,13 +24,20 @@
         <li {% if section == "people" %}class="selected"{% endif %}>
           <a href="#">People</a>
         </li>
-        {% endif %}
+        <li {% if section == "post_search" %}class="selected"{% endif %}>
+          <a href="{% url "blog:post_search" %}">Search</a>
+        </li>
+        <li {% if section == "subscribe" %}class="selected"{% endif %}>
+          <a href="{% url "blog:subscribe" %}">Subscribe</a>
+        </li>
+        {% else %}
         <li>
           <a href="{% url "blog:post_search" %}">Search</a>
         </li>
         <li>
           <a href="{% url "blog:subscribe" %}">Subscribe</a>
         </li>
+        {% endif %}
       </ul>
       
       <span class="user">
