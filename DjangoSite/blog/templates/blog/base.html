@@ -1,17 +1,30 @@
 {% load blog_tags %}
+
 {% load static %}
+
 <!DOCTYPE html>
   <html>
-  <head>
-    <title>{% block title %}{% endblock %}</title>
-    <link href="{% static "css/blog.css" %}" rel="stylesheet">
-  </head>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link href="{% static "css/blog.css" %}" rel="stylesheet">
+    </head>
   <body>
     <div id="header">
       <span class="logo">
         <a style="color:#f15a22;" href="/">Rowdy Blog</a>
       </span>
       <ul class="menu">
+        {% if request.user.is_authenticated %}
+        <li {% if section == "dashboard" %}class="selected"{% endif %}>
+          <a href="{% url "dashboard" %}">My dashboard</a>
+        </li>
+        <li {% if section == "images" %}class="selected"{% endif %}>
+          <a href="#">Images</a>
+        </li>
+        <li {% if section == "people" %}class="selected"{% endif %}>
+          <a href="#">People</a>
+        </li>
+        {% endif %}
         <li>
           <a href="{% url "blog:post_search" %}">Search</a>
         </li>
@@ -19,10 +32,14 @@
           <a href="{% url "blog:subscribe" %}">Subscribe</a>
         </li>
       </ul>
-
+      
       <span class="user">
-          <a href="#">Log-in</a>
-          {# <a href="{% url "login" %}">Log-in</a> #}
+        {% if request.user.is_authenticated %}
+        Hello {{ request.user.first_name }},
+          <a href="{% url "logout" %}">Logout</a>
+        {% else %}
+          <a href="{% url "login" %}">Log-in</a>
+        {% endif %}
       </span>
     </div>
     <div id="content">
@@ -37,7 +54,7 @@
       <h3>Most popular posts</h3>
       {% get_most_commented_posts as most_commented_posts %}
       <ul>
-        {% for post in most_commented_posts %}
+       {% for post in most_commented_posts %}
           <li>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
           </li>
