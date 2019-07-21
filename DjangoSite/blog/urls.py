@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 app_name = 'blog'
@@ -21,4 +21,5 @@ urlpatterns = [
          views.post_share, name='post_share'),
     path('search/', views.post_search, name='post_search'),
     path('subscribe/', views.email_list_signup, name='subscribe'),
+    path('account/', include('account.urls')),
 ]
