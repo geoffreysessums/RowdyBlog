@@ -107,6 +107,17 @@ form p {
     overflow:auto;
 }
 */
+form {
+    overflow:auto;
+    color:#333;
+}
+form p {
+    /*width:100%;*/
+    overflow:auto;
+    padding-left:4px;
+    padding-right:4px;
+}
+
 label {
     float:left;
     clear:both;
