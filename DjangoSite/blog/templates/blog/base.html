@@ -31,10 +31,10 @@
           <a href="{% url "blog:subscribe" %}">Subscribe</a>
         </li>
         {% else %}
-        <li>
+        <li {% if section == "post_search" %}class="selected"{% endif %}>
           <a href="{% url "blog:post_search" %}">Search</a>
         </li>
-        <li>
+        <li {% if section == "subscribe" %}class="selected"{% endif %}>
           <a href="{% url "blog:subscribe" %}">Subscribe</a>
         </li>
         {% endif %}
