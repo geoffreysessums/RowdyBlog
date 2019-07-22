@@ -11,7 +11,7 @@ p {
 }
 
 a {
-    color:#007bff;;
+    color:#007bff;
     text-decoration:none;
 }
 
@@ -84,38 +84,24 @@ ol {
 #content {
     float:left;
     width:60%;
+    /*padding:30px 100px;*/
     padding:0 0 0 30px;
 }
-
 #sidebar { 
-  float:right;
-  width:30%;
-  padding:10px;
-  background:#efefef; 
-  height:100%;
+    float:right;
+    width:30%;
+    padding:10px;
+    background:#efefef; 
+    height:100%;
 }
-
 /* forms */
-/*
 form {
     overflow:auto;
 }
-*/
-/*
+
 form p {
     width:100%;
     overflow:auto;
-}
-*/
-form {
-    overflow:auto;
-    color:#333;
-}
-form p {
-    /*width:100%;*/
-    overflow:auto;
-    padding-left:4px;
-    padding-right:4px;
 }
 
 label {
@@ -141,14 +127,12 @@ input[type=submit], a.button {
     font-size:14px;
     text-transform:uppercase;
 }
-
 .errorlist {
     color:#cc0033;
     float:left;
     clear:both;
     padding-left:10px;
 }
-
 .helptext {
     margin:0 0 20px 0;
     color:#aaa;
@@ -156,23 +140,21 @@ input[type=submit], a.button {
     float:left;
     font-size:13px;
 }
-
 /* comments */
 .comment {
-  padding:10px;
+    padding:10px;
 }
 .comment:nth-child(even) {
-  background:#efefef;
+    background:#efefef;
 }
 .comment .info {
-  font-weight:bold;
-  font-size:12px;
-  color:#666;
+    font-weight:bold;
+    font-size:12px;
+    color:#666;
 }
-
 /* messages */
 ul.messages {
-    /*margin:10px 100px;*/
+    margin:10px 100px;
     padding:0;
     list-style-type:
     none;
