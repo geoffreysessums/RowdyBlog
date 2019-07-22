@@ -116,6 +116,7 @@ def post_search(request):
        form = SearchForm()
        query = None
        results = []
+       section = 'post_search'
        if 'query' in request.GET:
            form = SearchForm(request.GET)
            if form.is_valid():
@@ -128,7 +129,8 @@ def post_search(request):
                #               similarity=TrigramSimilarity('body', query), ).filter(similarity__gt=0.3).order_by('-similarity')
        return render(request,
                      'blog/post/search.html',
-                     {'form': form,
+                     {'section': 'post_search',
+                      'form': form,
                       'query': query,
                       'results': results})
 
@@ -165,4 +167,5 @@ def email_list_signup(request):
    #return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
    return render(request,
                      'blog/post/subscribe.html',
-                     {'form': form})
+                     {'section': 'subscribe',
+                      'form': form})
