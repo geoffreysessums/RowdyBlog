@@ -18,12 +18,14 @@
         <li {% if section == "dashboard" %}class="selected"{% endif %}>
           <a href="{% url "dashboard" %}">My dashboard</a>
         </li>
+        {% comment "Uncomment to enable links" %}
         <li {% if section == "images" %}class="selected"{% endif %}>
           <a href="#">Images</a>
         </li>
         <li {% if section == "people" %}class="selected"{% endif %}>
           <a href="#">People</a>
         </li>
+        {% endcomment %}
         <li {% if section == "post_search" %}class="selected"{% endif %}>
           <a href="{% url "blog:post_search" %}">Search</a>
         </li>
