@@ -31,4 +31,5 @@ urlpatterns = [
          name='password_reset_complete'),
     # alternative way to include authentication views
     # path('', include('django.contrib.auth.urls')),
+    path('edit/', views.edit, name='edit'),
 ]
