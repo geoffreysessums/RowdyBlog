@@ -7,7 +7,7 @@ Framework: Django 2.1.4
 
 ## Description
 
-DjangoProject is a blogging web application that uses Django's built-in administration site interface for managing users and editing blog posts.
+RowdyBlog is a blogging application that allows authors to manage users, posts, comments, and mailing lists. Visitors can search for posts, leave comments, register and create a profile, subscribe to the mailing list, and follow authors. 
 
 ## What I Learned
 
@@ -21,23 +21,18 @@ DjangoProject is a blogging web application that uses Django's built-in administ
 * How to use Django's built-in pagination class to list views for more responsive web pages.
 * How to send emails using a local SMTP server.
 * How to create forms and handle them in views.
-* How to crete forms from models.
+* How to create forms from models.
 * How to integrate third-part applications (e.g. django-taggit for tagging posts)
 * How to build complex QuerySets.
 * How to create custom template tags and filters.
 * How to create a sitemap using Django's sitemap framework, so that web crawler can index the site's content.
-
-## Installation
-
-(coming soon)
-
-## Usage
-
-(coming soon)
-
-## Testing
-
-(coming soon)
+* How to setup and configure a PostgreSQL database.
+* How to register a domain name.
+* How to deploy a web application via Amazon Web Services (AWS).
+* How to get a SSL certificate.
+* How to set up a mailing list through the Mailchimp API.
+* How to implement visitor registration.
+* How to implement user requests to change and reset passwords.
 
 ## Credits
 
