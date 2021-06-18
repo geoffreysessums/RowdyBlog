@@ -7,6 +7,7 @@ Framework: Django
 
 ## Description
 
+[Project Workbook](https://github.com/geoffreysessums/RowdyBlog/blob/master/project_workbook_rowdy_blog_app_v1.5.docx.pdf)
 RowdyBlog is a blogging application that allows authors to manage users, posts, comments, and mailing lists. Visitors can search for posts, leave comments, register and create a profile, subscribe to the mailing list, and follow authors. 
 
 ## What I Learned
