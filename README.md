@@ -21,7 +21,7 @@ RowdyBlog is a blogging application that allows authors to manage users, posts, 
 * How to build views, templates and URLs.
 * How to use Django's class-based views.
 * How to use Django's built-in pagination class to list views for more responsive web pages.
-* How to send emails using a local SMTP server.
+* How to send emails using a SMTP server.
 * How to create forms and handle them in views.
 * How to create forms from models.
 * How to integrate third-part applications (e.g. django-taggit for tagging posts)
